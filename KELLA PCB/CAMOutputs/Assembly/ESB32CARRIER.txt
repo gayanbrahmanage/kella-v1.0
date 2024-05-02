@@ -1,0 +1,15 @@
+Partlist exported from C:/Users/gayan/OneDrive/Documents/eagle/projects/KELLA/ESB32CARRIER.sch at 2024-02-25 5:42 PM
+
+Qty Value        Device       Package            Parts                                             Description               MF MPN OC_FARNELL OC_NEWARK POPULARITY
+1                L02P         L02P               SV1                                               AMP MT CONNECTOR                 unknown    unknown   1         
+1                L03P         L03P               SV4                                               AMP MT CONNECTOR                 unknown    unknown   0         
+7                L04P         L04P               SV8, SV9, SV10, SV12, SV14, SV15, SV18            AMP MT CONNECTOR                 unknown    unknown   0         
+2                L05P         L05P               SV6, SV7                                          AMP MT CONNECTOR                 unknown    unknown   0         
+5                L06P         L06P               SV5, SV11, SV13, SV16, SV17                       AMP MT CONNECTOR                 unknown    unknown   0         
+2                L09P         L09P               SV2, SV3                                          AMP MT CONNECTOR                 unknown    unknown   0         
+6                LED3MM       LED3MM             LED1, LED2, LED3, LED4, LED5, LED6                LED                                                             
+2                MTA08-100    10X08MTA           J1, J2                                            AMP connector                                         1         
+12               R-US_0207/10 0207/10            R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12 RESISTOR, American symbol                                       
+2                W237-06P     W237-6P            X1, X2                                            WAGO SREW CLAMP                  unknown    unknown   1         
+2   ESP32WROOM36 ESP32WROOM36 ESP32WROOM36PINDIP U$1, U$2                                                                                                          
+2   UF5400       UF5400       DO201-15           D1, D2                                            DIODE                                                 0         
