@@ -9,10 +9,9 @@
 
 # Carrier Board 
 
-![Sample Image](KELLA PCB/ESP32KiCAD
-/Circuit.PNG)
+![Circuit](KELLAPCB/ESP32KiCAD/Circuit.PNG)
 
-![Sample Image](images/example.png)
+![PCB](KELLAPCB/ESP32KiCAD/PCB.PNG)
 
-![Sample Image](images/example.png)
+![MSP32](KELLAPCB/ESP32KiCAD/ESP32-DOIT-DEV-KIT-v1-pinout-mischianti.pdf)
 
