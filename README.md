@@ -9,7 +9,8 @@
 
 # Carrier Board 
 
-![Sample Image]([images/example.png](https://github.com/gayanbrahmanage/kella-v1.0/blob/main/KELLA%20PCB/ESP32KiCAD/Circuit.PNG))
+![Sample Image](KELLA PCB/ESP32KiCAD
+/Circuit.PNG)
 
 ![Sample Image](images/example.png)
 
