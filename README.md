@@ -2,11 +2,12 @@
  Humonoid Robot Development Project
 
  ### Base Mechanical Design
- 
+ <div style="display: flex;">
  <img src="photos/image.png" alt="Example Image" width="180" height="200">
  <img src="photos/image2.png" alt="Example Image" width="180" height="220">
  <img src="photos/image4.png" alt="Example Image" width="180" height="220">
-   
+ </div>
+ 
  ### YouTube Video
 
 [![My YouTube Video](http://img.youtube.com/vi/laG0K3bYE8s/0.jpg)](https://www.youtube.com/watch?v=laG0K3bYE8s)
