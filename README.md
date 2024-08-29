@@ -3,9 +3,9 @@
 
  ### Base Mechanical Design
  <div style="display: flex;">
- <img src="photos/image.png" alt="Example Image" width="180" height="200">
- <img src="photos/image2.png" alt="Example Image" width="180" height="220">
- <img src="photos/image4.png" alt="Example Image" width="180" height="220">
+ <img src="photos/image.png" alt="Example Image" width="160" height="220">
+ <img src="photos/image2.png" alt="Example Image" width="170" height="220">
+ <img src="photos/image4.png" alt="Example Image" width="170" height="220">
  </div>
  
  ### YouTube Video
