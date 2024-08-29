@@ -4,8 +4,8 @@
  ### Base Mechanical Design
  
  <img src="photos/image.png" alt="Example Image" width="350" height="350">
- <img src="photos/image2.png" alt="Example Image" width="320" height="350">
- <img src="photos/image4.png" alt="Example Image" width="320" height="350">
+ <img src="photos/image2.png" alt="Example Image" width="300" height="350">
+ <img src="photos/image4.png" alt="Example Image" width="300" height="350">
    
  ### YouTube Video
 
