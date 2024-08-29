@@ -2,12 +2,10 @@
  Humonoid Robot Development Project
 
  #Base Mechanical Design
- <img src="photos/image.png" alt="Example Image" width="300" height="150">
- 
- ![Circuit](photos/image.png)
- ![Circuit](photos/image2.png)
- ![Circuit](photos/image4.png)
-
+ <img src="photos/image.png" alt="Example Image" width="400" height="350">
+ <img src="photos/image2.png" alt="Example Image" width="400" height="350">
+ <img src="photos/image4.png" alt="Example Image" width="400" height="350">
+   
  ### YouTube Video
 
 [![My YouTube Video](http://img.youtube.com/vi/laG0K3bYE8s/0.jpg)](https://www.youtube.com/watch?v=laG0K3bYE8s)
