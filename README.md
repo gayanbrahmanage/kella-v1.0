@@ -2,6 +2,8 @@
  Humonoid Robot Development Project
 
  #Base Mechanical Design
+ <img src="photos/image.png" alt="Example Image" width="300" height="150">
+ 
  ![Circuit](photos/image.png)
  ![Circuit](photos/image2.png)
  ![Circuit](photos/image4.png)
