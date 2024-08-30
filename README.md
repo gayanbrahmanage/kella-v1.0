@@ -26,6 +26,6 @@
 
 ![MSP32](KELLAPCB/ESP32KiCAD/esp32.PNG)
 
-[View the PDF](photos/pdf.pdf)
+[View Design PPT](photos/pdf.pdf)
 
 
