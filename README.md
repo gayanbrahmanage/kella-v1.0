@@ -26,4 +26,6 @@
 
 ![MSP32](KELLAPCB/ESP32KiCAD/esp32.PNG)
 
+[View the PDF](Receptionist Robot Architecture revised.pdf)
+
 
