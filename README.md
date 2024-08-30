@@ -1,7 +1,7 @@
 # kella-v1.0
  Humonoid Robot Development Project
 
- ### Base Mechanical Design
+ ### Base Design and Development
  <div style="display: flex;">
  <img src="photos/image.png" alt="Example Image" width="180" height="220">
  <img src="photos/image2.png" alt="Example Image" width="170" height="220">
