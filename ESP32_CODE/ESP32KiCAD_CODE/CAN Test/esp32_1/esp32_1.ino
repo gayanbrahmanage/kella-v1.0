@@ -7,24 +7,52 @@ MCP2515 mcp2515(5);
 
 
 void setup() {
-  canMsg1.can_id  = 0x0F6;
+  canMsg1.can_id  = 0x300;
   canMsg1.can_dlc = 8;
-  canMsg1.data[0] = 0x8E;
-  canMsg1.data[1] = 0x87;
-  canMsg1.data[2] = 0x32;
-  canMsg1.data[3] = 0xFA;
-  canMsg1.data[4] = 0x26;
-  canMsg1.data[5] = 0x8E;
-  canMsg1.data[6] = 0xBE;
-  canMsg1.data[7] = 0x86;
+  canMsg1.data[0] = 0x79;
+  canMsg1.data[1] = 0x00;
+  canMsg1.data[2] = 0x01;
+  canMsg1.data[3] = 0x00;
+  canMsg1.data[4] = 0x00;
+  canMsg1.data[5] = 0x00;
+  canMsg1.data[6] = 0x00;
+  canMsg1.data[7] = 0x00;
 
-  Serial.begin(115200);
+ Serial.begin(115200);
+ delay(1000);
+
+  // Initialize MCP2515 CAN Controller
+  SPI.begin();  // Initialize SPI bus
   
-  mcp2515.reset();
-  mcp2515.setBitrate(CAN_125KBPS);
-  mcp2515.setNormalMode();
+  // Perform MCP2515 reset
+  if (mcp2515.reset() != MCP2515::ERROR_OK) {
+    Serial.println("MCP2515 Reset Error");
+    while (1);  // Halt execution if the reset fails
+  }
   
-  Serial.println("Example: Write to CAN");
+  // Set CAN bus speed (500kbps) and check for errors
+  if (mcp2515.setBitrate(CAN_1000KBPS, MCP_8MHZ) != MCP2515::ERROR_OK) {
+    Serial.println("MCP2515 Set Bitrate Error");
+    while (1);  // Halt execution if the bitrate setting fails
+  }
+  
+  // Set normal mode for CAN communication and check for errors
+  if (mcp2515.setNormalMode() != MCP2515::ERROR_OK) {
+    Serial.println("MCP2515 Set Normal Mode Error");
+    while (1);  // Halt execution if setting normal mode fails
+  }
+
+  Serial.println("CAN bus initialized successfully");
+  
+  delay(1000);
+
+  // Check for errors on the MCP2515
+  if (mcp2515.checkError() == MCP2515::ERROR_OK) {
+    Serial.println("No CAN errors");
+  } else {
+    Serial.println("Error: CAN bus issue detected");
+  }
+  
 }
 
 void loop() {
