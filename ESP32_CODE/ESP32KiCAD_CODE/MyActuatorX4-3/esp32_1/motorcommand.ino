@@ -44,17 +44,17 @@ void set_absolute_pose(uint16_t ID, uint16_t speedmax, uint32_t pose){
   canMsg.data[0] = 0xA4;        
   canMsg.data[1] = 0x00;
    // Split the uint16_t value into two bytes
-  canMsg.data[2] = (speedmax >> 8) & 0xFF;  // Higher byte
-  canMsg.data[3] = speedmax & 0xFF; 
+  canMsg.data[2] = speedmax; 
+  canMsg.data[3] = (speedmax >> 8);  // Higher byte
   // Split the uint32_t value into four bytes
-  canMsg.data[7] = pose & 0xFF;            // Least significant byte
-  canMsg.data[6] = (pose >> 8) & 0xFF;     // Next byte
-  canMsg.data[5] = (pose >> 16) & 0xFF;    // Next byte
-  canMsg.data[4] = (pose >> 24) & 0xFF;    // Most significant byte
+  canMsg.data[4] = pose ;            // Least significant byte
+  canMsg.data[5] = (pose >> 8) ;     // Next byte
+  canMsg.data[6] = (pose >> 16) ;    // Next byte
+  canMsg.data[7] = (pose >> 24) ;    // Most significant byte
 
   // Send the CAN message to request ID
   if (mcp2515.sendMessage(&canMsg) == MCP2515::ERROR_OK) {
-    Serial.print(pose, HEX);
+    Serial.print(pose);
   } else {
     Serial.println("Error sending CAN message to read CAN ID");
   }
