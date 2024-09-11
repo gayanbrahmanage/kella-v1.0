@@ -16,14 +16,6 @@
 
 # Carrier Board 
 
-![Circuit](KELLAPCB/ESP32KiCAD/Circuit.PNG)
-
-![PCB](KELLAPCB/ESP32KiCAD/PCB.PNG)
-
-![PCB](KELLAPCB/ESP32KiCAD/PCB_Printed.jpg) 
-
-![PCB](KELLAPCB/ESP32KiCAD/Soldered.jpg) 
-
 ![MSP32](KELLAPCB/ESP32KiCAD/esp32.PNG)
 
 [View Design PPT](photos/pdf.pdf)
