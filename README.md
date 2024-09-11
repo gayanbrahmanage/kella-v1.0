@@ -14,7 +14,7 @@
 
 [Watch on YouTube](https://www.youtube.com/watch?v=laG0K3bYE8s)
 
-# Carrier Board 
+# Design Power Point 
 
 [View Design PPT](photos/pdf.pdf)
 
