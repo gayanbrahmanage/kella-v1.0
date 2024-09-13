@@ -35,7 +35,6 @@ void read_temp_speed_pose(uint16_t ID, uint16_t &temp, uint16_t &torque, uint16_
   
 }
 
-
 void set_absolute_pose(uint16_t ID, uint16_t speedmax, uint32_t pose){
 
   struct can_frame canMsg;
@@ -51,6 +50,31 @@ void set_absolute_pose(uint16_t ID, uint16_t speedmax, uint32_t pose){
   canMsg.data[5] = (pose >> 8) ;     // Next byte
   canMsg.data[6] = (pose >> 16) ;    // Next byte
   canMsg.data[7] = (pose >> 24) ;    // Most significant byte
+
+  // Send the CAN message to request ID
+  if (mcp2515.sendMessage(&canMsg) == MCP2515::ERROR_OK) {
+    Serial.print(pose);
+  } else {
+    Serial.println("Error sending CAN message to read CAN ID");
+  }
+  
+}
+
+void set_absolute_pose_single_turn(uint16_t ID, uint8_t dir, uint16_t speedmax, uint32_t pose){
+
+  struct can_frame canMsg;
+  canMsg.can_id  = ID;    
+  canMsg.can_dlc = 8;         
+  canMsg.data[0] = 0xA6;        
+  canMsg.data[1] = dir;
+   // Split the uint16_t value into two bytes
+  canMsg.data[2] = speedmax; 
+  canMsg.data[3] = (speedmax >> 8);  // Higher byte
+  // Split the uint32_t value into four bytes
+  canMsg.data[4] = pose ;            // Least significant byte
+  canMsg.data[5] = (pose >> 8) ;     // Next byte
+  canMsg.data[6] = 0x00 ;   // Next byte
+  canMsg.data[7] = 0x00 ;    // Most significant byte
 
   // Send the CAN message to request ID
   if (mcp2515.sendMessage(&canMsg) == MCP2515::ERROR_OK) {

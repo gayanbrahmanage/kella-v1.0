@@ -6,7 +6,8 @@ struct can_frame canMsg1;
 MCP2515 mcp2515(5);
 uint16_t ID=0x141;
 uint16_t ctemp, ctorque, cspeed, cpose;
-
+uint8_t dir=0x01;
+uint16_t maxSpeed=360;
 
 // set pin numbers
 const int buttonPin = 27; 
@@ -40,9 +41,10 @@ void loop() {
  read_temp_speed_pose(ID, ctemp, ctorque, cspeed, cpose);
  
  potValue = analogRead(potPin);
- potValue = movingAverageFilter(potValue)*8;
+ potValue = movingAverageFilter(potValue)*100;
  Serial.println(potValue);
- set_absolute_pose(ID, 200,potValue);
+ set_absolute_pose(ID, maxSpeed,potValue);
+ //set_absolute_pose_single_turn(ID,dir, 200,potValue);
  delay(500);
   
  //Serial.print("pose: ");
