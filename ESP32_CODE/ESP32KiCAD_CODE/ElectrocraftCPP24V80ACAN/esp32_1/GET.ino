@@ -1,5 +1,8 @@
-void send_GET_command(byte CPP, byte ad0, byte ad1 ){
-  
+struct can_frame send_GET_command(byte CPP, byte ad0, byte ad1 ){
+
+  // Initialize MCP2515
+  struct can_frame canMsg; 
+
   // Example values for constructing the 29-bit identifier
   byte priority = 0x02;       // Priority = 2
   byte serviceBit = 0x01;     // Service Bit = 1 (always 1)
@@ -41,24 +44,10 @@ void send_GET_command(byte CPP, byte ad0, byte ad1 ){
 
   // Check for received CAN messages (the response from the motor)
   if (mcp2515.readMessage(&canMsg) == MCP2515::ERROR_OK) {
-    Serial.print("Received CAN message with ID: 0x");
-    Serial.println(canMsg.can_id, HEX);
-    
-    // Print received data (assuming it includes CAN ID info)
-    Serial.print("CAN ID Response Data: ");
-    for (int i = 0; i < canMsg.can_dlc; i++) {
-      Serial.print(canMsg.data[i], HEX);
-      Serial.print(" ");
-    }
-    Serial.println();
 
-    // Check if the response data includes a CAN ID
-    // Typically, the CAN ID will be part of the response. You might need to parse it accordingly.
-    uint8_t receivedID = canMsg.data[0]; // For example, CAN ID might be stored in the first byte
-    Serial.print("Read CAN ID: 0x");
-    Serial.println(receivedID, HEX);
   } else {
     Serial.println("No CAN message received");
   }
-  
+
+  return canMsg;
 }
