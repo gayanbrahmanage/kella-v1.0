@@ -1,4 +1,4 @@
-struct can_frame send_GET_command(byte CPP, byte ad0, byte ad1 ){
+bool  Reset(byte CPP){
 
   struct can_frame canMsg; 
 

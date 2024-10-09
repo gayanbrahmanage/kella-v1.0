@@ -8,8 +8,8 @@ void GET_Drive_Status(byte CPP, MotorData& Motor1Data){
   byte byte2=canMsg.data[5];
   byte byte3=canMsg.data[6];
   
-  Motor1Data.ready = byte0 & 0x01;
-  Motor1Data.enable= byte0 & 0x02;
-  Motor1Data.fault = byte1 & 0x01; 
+  Motor1Data.get_ready = byte0 & 0x01;
+  Motor1Data.get_enable= byte0 & 0x02;
+  Motor1Data.get_fault = byte1 & 0x01; 
     
 }
