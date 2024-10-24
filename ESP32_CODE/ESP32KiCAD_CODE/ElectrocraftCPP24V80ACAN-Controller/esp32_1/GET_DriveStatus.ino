@@ -17,6 +17,6 @@ void GET_Drive_Status(byte CPP, MotorData& Motor1Data){
 
     // Shift byte1 to the left by 8 bits and OR with byte0
   uint16_t Addressr= (canMsg.data[2] << 8) | canMsg.data[1];
-  Serial.println(Addressr, HEX);
+  //Serial.println(Addressr, HEX);
       
 }

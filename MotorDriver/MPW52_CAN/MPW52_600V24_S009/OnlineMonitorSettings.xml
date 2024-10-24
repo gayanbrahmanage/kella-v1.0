@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OnlineMonitor>
+    <monitorInterval>2</monitorInterval>
+    <typeGraph>0</typeGraph>
+    <typeMode>0</typeMode>
+</OnlineMonitor>

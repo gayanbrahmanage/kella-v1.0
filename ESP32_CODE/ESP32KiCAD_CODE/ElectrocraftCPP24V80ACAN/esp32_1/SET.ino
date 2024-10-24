@@ -1,4 +1,4 @@
-struct can_frame send_GET_command(byte CPP, byte ad0, byte ad1 ){
+void send_SET_command(byte CPP, byte ad0, byte ad1, uint32_t  set_val ){
 
   struct can_frame canMsg; 
 
@@ -6,7 +6,7 @@ struct can_frame send_GET_command(byte CPP, byte ad0, byte ad1 ){
   byte priority = 0x01;       // Priority = 2
   byte serviceBit = 0x01;     // Service Bit = 1 (always 1)
   byte requestBit = 0x01;     // Request Bit = 1 (Request = 1, Response = 0)
-  byte serviceID = 0x30;      // GET service command = 0x00
+  byte serviceID = 0x20;      // SET service command = 0x20
   byte axisGroup = 0x01;      // Axis = 1 (for single drive)
   byte destID = CPP;         // Destination ID = 01
   byte hostBit = 0x00;        // Host Bit = 0 (for host PC)
@@ -15,21 +15,20 @@ struct can_frame send_GET_command(byte CPP, byte ad0, byte ad1 ){
   // Construct the 29-bit CAN ID
   unsigned long canID = constructCANID(priority, serviceBit, requestBit, serviceID, axisGroup, destID, hostBit, sourceID);
 
-
-  // Display the constructed 29-bit CAN ID
-  //Serial.print("Constructed 29-bit CAN ID: ");
-  //Serial.println(canID, HEX);
-
   // Prepare the CAN message with a 29-bit identifier (Extended frame)
   canMsg.can_id = canID;     // 29-bit ID
   canMsg.can_id |= CAN_EFF_FLAG;  // Set the Extended Frame Format (EFF) flag
-  canMsg.can_dlc = 0x03;        // 3 data bytes
+  canMsg.can_dlc = 0x07;        // 3 data bytes
 
   // Example data for GET command (you can modify this)
   canMsg.data[0] = 0x04;
   canMsg.data[1] = ad0;
   canMsg.data[2] = ad1;
- 
+
+  canMsg.data[3] = set_val & 0xFF;
+  canMsg.data[4] = (set_val >> 8) & 0xFF;
+  canMsg.data[5] = (set_val >> 16) & 0xFF;
+  canMsg.data[6] = (set_val >> 24) & 0xFF;
 
   // Send the message
   if (mcp2515.sendMessage(&canMsg) == MCP2515::ERROR_OK) {
@@ -44,10 +43,10 @@ struct can_frame send_GET_command(byte CPP, byte ad0, byte ad1 ){
    struct can_frame rcanMsg; 
   // Check for received CAN messages (the response from the motor)
   if (mcp2515.readMessage(&rcanMsg) == MCP2515::ERROR_OK) {
-
+    Serial.println("SET service command sent successfully");
+    Serial.println(rcanMsg.data[0]);
   } else {
     Serial.println("No CAN message received");
   }
 
-  return rcanMsg;
 }

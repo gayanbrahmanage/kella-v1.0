@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OnlineMonitor>
+    <monitorInterval>2</monitorInterval>
+    <typeGraph>0</typeGraph>
+    <typeMode>0</typeMode>
+    <parameters>
+        <paramName>RT_State_PWM</paramName>
+        <visible>1</visible>
+        <autoScale>1</autoScale>
+        <minVal>-1.76</minVal>
+        <maxVal>1.8</maxVal>
+        <address></address>
+        <valueType>Int8</valueType>
+    </parameters>
+    <parameters>
+        <paramName>RT_State_Actual_Position</paramName>
+        <visible>1</visible>
+        <autoScale>1</autoScale>
+        <minVal>839681</minVal>
+        <maxVal>839682</maxVal>
+        <address></address>
+        <valueType>Int8</valueType>
+    </parameters>
+    <parameters>
+        <paramName>RT_State_Actual_Speed</paramName>
+        <visible>1</visible>
+        <autoScale>1</autoScale>
+        <minVal>-2.01</minVal>
+        <maxVal>1.69</maxVal>
+        <address></address>
+        <valueType>Int8</valueType>
+    </parameters>
+    <parameters>
+        <paramName>RT_State_Actual_Current</paramName>
+        <visible>1</visible>
+        <autoScale>1</autoScale>
+        <minVal>-0.04</minVal>
+        <maxVal>0</maxVal>
+        <address></address>
+        <valueType>Int8</valueType>
+    </parameters>
+</OnlineMonitor>
