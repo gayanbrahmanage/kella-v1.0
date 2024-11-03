@@ -10,9 +10,12 @@
  
  ### YouTube Video-Base Manual Mode Testing
 
+
 [![My YouTube Video](http://img.youtube.com/vi/laG0K3bYE8s/0.jpg)](https://www.youtube.com/watch?v=laG0K3bYE8s)
 
 [Watch on YouTube](https://www.youtube.com/watch?v=laG0K3bYE8s)
+
+[![My YouTube Video](http://img.youtube.com/vi/bEIRYtwlFlk/0.jpg)](https://www.youtube.com/watch?v=bEIRYtwlFlk)
 
 # Design Power Point 
 
